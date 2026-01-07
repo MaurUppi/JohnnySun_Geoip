@@ -1,15 +1,18 @@
+# GeoIP 背景知识: [Link](/GeoIP_Background.md)
+
 # 简介
 
 本项目每日自动生成 GeoIP 文件，同时提供命令行界面（CLI）供用户自行定制 GeoIP 文件，包括但不限于 V2Ray dat 格式路由规则文件 `geoip.dat` 和 MaxMind mmdb 格式文件 `Country.mmdb`。
 
 This project releases GeoIP files automatically every day. It also provides a command line interface(CLI) for users to customize their own GeoIP files, included but not limited to V2Ray dat format file `geoip.dat` and MaxMind mmdb format file `Country.mmdb`.
 
-## 与上游 [Loyalsoldier/geoip](https://github.com/Loyalsoldier/geoip) 的区别
-- 上游 [Loyalsoldier/geoip](https://github.com/Loyalsoldier/geoip) 使用的海外数据库是 MaxMind 提供的 GeoLite2。 MaxMind 所提供 Geo2Country 这几年的准确度并不好。很多 IP 的位置信息都有问题。 而本工程使用了近几年数据更加准确的 [IPInfo.io](https://ipinfo.io) 的 Free IP to Country 数据库
+## [JohnnySun/Geoip](https://github.com/JohnnySun/geoip) 与上游 [Loyalsoldier/geoip](https://github.com/Loyalsoldier/geoip) 的区别
+- 上游 Loyalsoldier/geoip 使用的海外数据库是 MaxMind 提供的 GeoLite2。 MaxMind 所提供 Geo2Country 这几年的准确度并不好。很多 IP 的位置信息都有问题。
+- [JohnnySun/Geoip] 工程使用了近几年数据更加准确的 [IPInfo.io](https://ipinfo.io) 的 Free IP to Country 数据库
 - MaxMind 的 Geo2Country 数据库是每周五更新一次，而 ipinfo.io 的 Free IP to Country 数据库是每天更新一次。
 - CI每日生成的MMDB中，并不包含任何新增类别，剔除了ipip-cn的数据库，仅构建原始的ipinfo的mmdb数据库
 
-## 与官方版 GeoIP 的区别
+## [Loyalsoldier/geoip](https://github.com/Loyalsoldier/geoip) 与 MaxMind GeoIP 的区别
 - 海外/中国大陆的 IPv4 & IPv6 数据库 使用了[IPInfo.io](https://ipinfo.io) 的 Free IP to Country 数据库 而不是 MaxMind 提供的 GeoLite2
 - 新增类别支持（方便有特殊需求的用户使用，需要自己修改配置文件开启，可以参考config.old）：
   - `geoip:cloudflare`（`GEOIP,CLOUDFLARE`）
@@ -21,6 +24,9 @@ This project releases GeoIP files automatically every day. It also provides a co
   - `geoip:telegram`（`GEOIP,TELEGRAM`）
   - `geoip:twitter`（`GEOIP,TWITTER`）
 
+<details><summary> JohnnySun/Geoip 的 原始说明 </summary>
+<p>
+  
 ## 参考配置
 
 在 [Clash](https://github.com/Dreamacro/clash) 中使用本项目 `.mmdb` 格式文件的参考配置：
@@ -165,6 +171,12 @@ All available output formats:
   - surgeRuleSet (Convert data to Surge RuleSet)
   - text (Convert data to plaintext CIDR format)
 ```
+## 项目 Star 数增长趋势
+
+[![Stargazers over time](https://starchart.cc/JohnnySun/geoip.svg)](https://starchart.cc/JohnnySun/geoip)
+
+</p>
+</details> 
 
 ## License
 
@@ -174,6 +186,4 @@ This product includes `GeoLite2` data created by MaxMind, available from [MaxMin
 
 This product includes `Free IP to Country` data created by IPInfo.io, available from [IPInfo.io](https://ipinfo.io).
 
-## 项目 Star 数增长趋势
 
-[![Stargazers over time](https://starchart.cc/JohnnySun/geoip.svg)](https://starchart.cc/JohnnySun/geoip)
