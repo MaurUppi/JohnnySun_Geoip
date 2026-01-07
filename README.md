@@ -6,6 +6,9 @@
 
 This project releases GeoIP files automatically every day. It also provides a command line interface(CLI) for users to customize their own GeoIP files, included but not limited to V2Ray dat format file `geoip.dat` and MaxMind mmdb format file `Country.mmdb`.
 
+## 本工程的目标
+- 
+
 ## [JohnnySun/Geoip](https://github.com/JohnnySun/geoip) 与上游 [Loyalsoldier/geoip](https://github.com/Loyalsoldier/geoip) 的区别
 - 上游 Loyalsoldier/geoip 使用的海外数据库是 MaxMind 提供的 GeoLite2，Geo2Country 数据库是每周五更新一次。
 - JohnnySun/Geoip 项目使用了近几年数据更加准确的 [IPInfo.io](https://ipinfo.io) 的 Free IP to Country 数据库，数据是每天更新一次。
