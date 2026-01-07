@@ -7,22 +7,25 @@
 This project releases GeoIP files automatically every day. It also provides a command line interface(CLI) for users to customize their own GeoIP files, included but not limited to V2Ray dat format file `geoip.dat` and MaxMind mmdb format file `Country.mmdb`.
 
 ## [JohnnySun/Geoip](https://github.com/JohnnySun/geoip) 与上游 [Loyalsoldier/geoip](https://github.com/Loyalsoldier/geoip) 的区别
-- 上游 Loyalsoldier/geoip 使用的海外数据库是 MaxMind 提供的 GeoLite2。 MaxMind 所提供 Geo2Country 这几年的准确度并不好。很多 IP 的位置信息都有问题。
-- [JohnnySun/Geoip] 工程使用了近几年数据更加准确的 [IPInfo.io](https://ipinfo.io) 的 Free IP to Country 数据库
-- MaxMind 的 Geo2Country 数据库是每周五更新一次，而 ipinfo.io 的 Free IP to Country 数据库是每天更新一次。
+- 上游 Loyalsoldier/geoip 使用的海外数据库是 MaxMind 提供的 GeoLite2，Geo2Country 数据库是每周五更新一次。
+- JohnnySun/Geoip 项目使用了近几年数据更加准确的 [IPInfo.io](https://ipinfo.io) 的 Free IP to Country 数据库，数据是每天更新一次。
 - CI每日生成的MMDB中，并不包含任何新增类别，剔除了ipip-cn的数据库，仅构建原始的ipinfo的mmdb数据库
 
 ## [Loyalsoldier/geoip](https://github.com/Loyalsoldier/geoip) 与 MaxMind GeoIP 的区别
-- 海外/中国大陆的 IPv4 & IPv6 数据库 使用了[IPInfo.io](https://ipinfo.io) 的 Free IP to Country 数据库 而不是 MaxMind 提供的 GeoLite2
-- 新增类别支持（方便有特殊需求的用户使用，需要自己修改配置文件开启，可以参考config.old）：
-  - `geoip:cloudflare`（`GEOIP,CLOUDFLARE`）
-  - `geoip:cloudfront`（`GEOIP,CLOUDFRONT`）
-  - `geoip:facebook`（`GEOIP,FACEBOOK`）
-  - `geoip:fastly`（`GEOIP,FASTLY`）
-  - `geoip:google`（`GEOIP,GOOGLE`）
-  - `geoip:netflix`（`GEOIP,NETFLIX`）
-  - `geoip:telegram`（`GEOIP,TELEGRAM`）
-  - `geoip:twitter`（`GEOIP,TWITTER`）
+- 项目默认使用 [MaxMind GeoLite2 Country CSV 数据](https://github.com/Loyalsoldier/geoip/blob/release/GeoLite2-Country-CSV.zip)生成各个国家和地区的 GeoIP 文件。所有可供使用的国家和地区 geoip 类别（如 `geoip:cn`，两位英文字母表示国家和地区），请查看：[https://www.iban.com/country-codes](https://www.iban.com/country-codes)。
+- 另外，项目对 MaxMind 官方 GeoIP 数据做了修改和新增：
+  - 中国大陆 IPv4 地址数据融合了 [IPIP.net](https://github.com/17mon/china_ip_list/blob/master/china_ip_list.txt) 和 [@gaoyifan/china-operator-ip](https://github.com/gaoyifan/china-operator-ip/blob/ip-lists/china.txt)
+  - 中国大陆 IPv6 地址数据使用 [@gaoyifan/china-operator-ip](https://github.com/gaoyifan/china-operator-ip/blob/ip-lists/china6.txt)
+  - 新增类别（方便有特殊需求的用户使用）：
+    - `geoip:cloudflare`（`GEOIP,CLOUDFLARE`）
+    - `geoip:cloudfront`（`GEOIP,CLOUDFRONT`）
+    - `geoip:facebook`（`GEOIP,FACEBOOK`）
+    - `geoip:fastly`（`GEOIP,FASTLY`）
+    - `geoip:google`（`GEOIP,GOOGLE`）
+    - `geoip:netflix`（`GEOIP,NETFLIX`）
+    - `geoip:telegram`（`GEOIP,TELEGRAM`）
+    - `geoip:twitter`（`GEOIP,TWITTER`）
+    - `geoip:tor`（`GEOIP,TOR`）
 
 <details><summary> JohnnySun/Geoip 的 原始说明 </summary>
 <p>
